@@ -1,0 +1,24 @@
+.page-wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.homepage-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .homepage-content {
+    width: 195px;
+    text-align: justify;
+  }
+}
+
+.form-wrapper {
+
+}
