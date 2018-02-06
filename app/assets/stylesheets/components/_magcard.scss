@@ -1,0 +1,15 @@
+.magcard-row {
+  display: flex;
+  width: 100vw;
+  max-width: 750px;
+  margin: 25px auto;
+}
+
+.magcard {
+  width: 100%;
+  flex: 1 0 60px;
+  margin: 0 20px;
+  padding-bottom: 42%;
+  background-size: cover;
+  box-shadow: 0px 4px 20px 0px rgba(97, 102, 116, 0.55);
+}
