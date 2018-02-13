@@ -1,21 +1,28 @@
 <div class="page-wrapper">
   <h1>LOG IN</h1>
   <br>
-  <div class="brand-form">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email, required: false, label: false, placeholder: "email", :input_html => { :class => 'brand-input' } %>
-      <%= f.input :password, required: false, label: false, placeholder: "password", :input_html => { :class => 'brand-input' } %>
+    <div class="row">
+      <%= f.input :email, wrapper_html: { class: 'm12 s12' } %>
+      <%= f.input :password, wrapper_html: { class: 'm12 s12' } %>
+      <br>
       <br>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       <br>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "button-no-fill" %>
+      <%= f.button :submit, "Log in", class: "waves-effect waves-light btn width-100" %>
     </div>
     <% end %>
-  </div>
-
-  <%= render "devise/shared/links" %>
+    <br>
+    <%= render "devise/shared/links" %>
 </div>
+
+<%= content_for :after_js do %>
+<script>
+  $(document).ready(function() {
+    Materialize.updateTextFields();
+  });
+</script>
+<% end %>

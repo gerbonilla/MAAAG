@@ -13,3 +13,9 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// material design
+@import "materialize/components/color";
+$primary-color: color("blue-grey", "darken-4") !default;
+$secondary-color: color("blue-grey", "darken-4") !default;
+@import 'materialize';

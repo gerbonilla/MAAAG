@@ -1,22 +1,27 @@
 <div class="page-wrapper">
   <h1>Sign up</h1>
   <br>
-  <div class="brand-form">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-
-    <div class="form-inputs">
-    <%= f.input :email, required: true, label: false, placeholder: "email", :input_html => { :class => 'brand-input' } %>
-      <%= f.input :password, required: true, label: false, placeholder: "password", :input_html => { :class => 'brand-input' } %>
-      <%= f.input :password_confirmation, required: true, label: false, placeholder: "password confirmation", :input_html => { :class => 'brand-input' } %>
+    <div class="row">
+    <%= f.input :email, required: true, wrapper_html: { class: 'offset-m2 m8 s12' } %>
+      <%= f.input :password, required: true, wrapper_html: { class: 'offset-m2 m8 s12' } %>
+      <%= f.input :password_confirmation, required: true, wrapper_html: { class: 'offset-m2 m8 s12' } %>
       <br>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "button-no-fill" %>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "Sign up", class: "waves-effect waves-light btn" %>
     </div>
     <% end %>
-  </div>
-
+  <br>
   <%= render "devise/shared/links" %>
 </div>
+
+<%= content_for :after_js do %>
+<script>
+  $(document).ready(function() {
+    Materialize.updateTextFields();
+  });
+</script>
+<% end %>

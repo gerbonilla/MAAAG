@@ -2,17 +2,16 @@
   <div class="homepage-wrapper">
     <h1>MAAAG</h1>
     <div class="homepage-content">
-      <p>The internet's best curated selection of indie magazines.</p>
+      <p class="text-center">The internet's best curated selection of indie magazines.</p>
       <br>
     </div>
     <div class="homepage-content">
-      <div class="button-no-fill">
-      <%= link_to "START BROWSING", new_user_session_path %>
-      </div>
+      <%= link_to "START BROWSING", new_user_session_path, class: "waves-effect waves-light btn-large" %>
     </div>
   </div>
 </div>
 <div class="page-wrapper">
+<h4 class="text-center">Get access to the best indie magazines for only €4.99/month</h4>
   <div class="magcard-row">
     <div class="magcard" style="background-image: url('<%= image_url(@magazines[0]) %>')"></div>
     <div class="magcard" style="background-image: url('<%= image_url(@magazines[1]) %>')"></div>
