@@ -1,0 +1,25 @@
+<div class="page-wrapper">
+<!--   <div class="fixed-action-btn toolbar">
+    <a class="btn-floating btn-large">
+      <i class="large material-icons">filter_list</i>
+    </a>
+    <ul>
+      <li class="waves-effect waves-light"><a href="#!">All</a></li>
+      <li class="waves-effect waves-light"><a href="#!">Fashion</a></li>
+      <li class="waves-effect waves-light"><a href="#!">Lifestyle</a></li>
+      <li class="waves-effect waves-light"><a href="#!">Travel</a></li>
+    </ul>
+  </div> -->
+
+  <div class="issue-feed-wrapper">
+    <% @issues.each do |issue| %>
+      <h2 class="issue-feed-header"><%= issue.magazine %> <%= issue.title %></h2>
+      <p class="issue-feed-text">BY <%= issue.magazine %></p>
+      <%= image_tag issue.cover, class: "issuecard"  %>
+    <% end %>
+  </div>
+
+
+  <p>hello</p>
+</div>
+

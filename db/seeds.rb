@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Issue.create(title: "Issue 2", magazine: "Archive", description: "", cover: "Archive_I_2.png", genre: "Fashion")
+Issue.create(title: "Issue 3", magazine: "Archive", description: "", cover: "Archive_I_3.png", genre: "Fashion")
+Issue.create(title: "The Third Issue", magazine: "Berlin Quarterly", description: "", cover: "BQ_I_3.jpg", genre: "Fashion")
+Issue.create(title: "The Fourth Issue", magazine: "Berlin Quarterly", description: "", cover: "BQ_I_4.jpg", genre: "Fashion")
+Issue.create(title: "The Fifth Issue", magazine: "Berlin Quarterly", description: "", cover: "BQ_I_5.jpg", genre: "Fashion")
+Issue.create(title: "The Sixth Issue", magazine: "Berlin Quarterly", description: "", cover: "BQ_I_6.jpg", genre: "Fashion")
+Issue.create(title: "The Seventh Issue", magazine: "Berlin Quarterly", description: "", cover: "BQ_I_7.jpg", genre: "Fashion")
+Issue.create(title: "Issue 03", magazine: "Flaneur", description: "", cover: "Flaneur_I_3.jpg", genre: "Lifestyle")
+Issue.create(title: "Issue 04", magazine: "Flaneur", description: "", cover: "Flaneur_I_4.jpg", genre: "Lifestyle")
+Issue.create(title: "Issue 2", magazine: "Kaltblut", description: "", cover: "Kaltblut_I_2.jpg", genre: "Lifestyle")
+Issue.create(title: "Issue 3", magazine: "Kaltblut", description: "", cover: "Kaltblut_I_3.jpg", genre: "Lifstyle")
+Issue.create(title: "Issue 1", magazine: "The Travel Almanac", description: "", cover: "TTA_I_1.jpg", genre: "Travel")
+Issue.create(title: "Issue 2", magazine: "The Travel Almanac", description: "", cover: "TTA_I_2.jpg", genre: "Travel")
+Issue.create(title: "Issue 3", magazine: "The Travel Almanac", description: "", cover: "TTA_I_3.jpg", genre: "Travel")
+Issue.create(title: "Issue 11", magazine: "The Travel Almanac", description: "", cover: "TTA_I_11.jpg", genre: "Travel")
+Issue.create(title: "Issue 12", magazine: "The Travel Almanac", description: "", cover: "TTA_I_12.jpg", genre: "Travel")
