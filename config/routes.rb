@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'issues/index'
 
-  get 'issues/show'
-
-  resources :issues, only: [:index, :show]
+  resources :issues, only: [:index, :show] do
+    resources :albums, only: [:index]
+  end
 
   authenticated :user do
     root 'issues#index', as: :authenticated_root

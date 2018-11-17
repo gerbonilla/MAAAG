@@ -17,6 +17,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # material design
 gem 'materialize-sass'
 gem 'materialize-form'
