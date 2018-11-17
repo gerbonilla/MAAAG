@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
 
 # material design
 gem 'materialize-sass'
