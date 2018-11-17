@@ -19,6 +19,7 @@ gem 'webpacker'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
+gem 'carrierwave'
 
 # material design
 gem 'materialize-sass'
