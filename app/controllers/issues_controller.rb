@@ -6,4 +6,10 @@ class IssuesController < ApplicationController
 
   def show
   end
+
+  private
+  def issue_params
+    params.require(:issue).permit(:title, :magazine, :photo, :description, :genre) ## Add :image attribute
+  end
+
 end

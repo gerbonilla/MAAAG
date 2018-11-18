@@ -16,7 +16,7 @@
     <h2 class="issue-feed-header"><%= issue.magazine %> <%= issue.title %></h2>
     <p class="issue-feed-text">BY <%= issue.magazine %></p>
     <%= link_to issue_albums_path(issue) do %>
-      <%= image_tag issue.cover, class: "issuecard"  %>
+      <%= cl_image_tag issue.photo, class: "issuecard" %>
     <% end %>
     <% end %>
   </div>
