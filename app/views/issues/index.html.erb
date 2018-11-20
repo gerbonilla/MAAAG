@@ -15,13 +15,11 @@
     <% @issues.each do |issue| %>
     <h2 class="issue-feed-header"><%= issue.magazine %> <%= issue.title %></h2>
     <p class="issue-feed-text">BY <%= issue.magazine %></p>
-    <%= link_to issue_albums_path(issue) do %>
+    <%= link_to issue_path(issue) do %>
       <%= cl_image_tag issue.photo, class: "issuecard" %>
     <% end %>
     <% end %>
   </div>
 
-
-  <p>hello</p>
 </div>
 

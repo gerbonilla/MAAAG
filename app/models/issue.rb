@@ -1,4 +1,4 @@
 class Issue < ApplicationRecord
-  has_one :contents
+  has_many :contents
   mount_uploader :photo, PhotoUploader
 end

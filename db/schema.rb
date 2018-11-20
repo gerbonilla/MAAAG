@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181117110350) do
+ActiveRecord::Schema.define(version: 20181120223602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20181117110350) do
     t.datetime "updated_at", null: false
     t.string "content", default: [], array: true
     t.index ["issue_id"], name: "index_albums_on_issue_id"
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.bigint "issue_id"
+    t.string "content_type"
+    t.string "photo"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_contents_on_issue_id"
   end
 
   create_table "issues", force: :cascade do |t|
@@ -52,4 +62,5 @@ ActiveRecord::Schema.define(version: 20181117110350) do
   end
 
   add_foreign_key "albums", "issues"
+  add_foreign_key "contents", "issues"
 end
