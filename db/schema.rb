@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181120223602) do
+ActiveRecord::Schema.define(version: 20181124104953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20181120223602) do
     t.datetime "updated_at", null: false
     t.string "content", default: [], array: true
     t.index ["issue_id"], name: "index_albums_on_issue_id"
+  end
+
+  create_table "content_items", force: :cascade do |t|
+    t.bigint "content_id"
+    t.integer "item_x"
+    t.integer "item_y"
+    t.string "title"
+    t.string "description"
+    t.integer "price_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "link"
+    t.index ["content_id"], name: "index_content_items_on_content_id"
   end
 
   create_table "contents", force: :cascade do |t|
@@ -62,5 +75,6 @@ ActiveRecord::Schema.define(version: 20181120223602) do
   end
 
   add_foreign_key "albums", "issues"
+  add_foreign_key "content_items", "contents"
   add_foreign_key "contents", "issues"
 end

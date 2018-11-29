@@ -1,33 +1,31 @@
-Content.delete_all
-Issue.delete_all
+# ContentItem.delete_all
+# Content.delete_all
+# Issue.delete_all
 
-a = Issue.create(title: "Issue 2", magazine: "Archive", description: "", photo: "Archive_I_2.png", genre: "Fashion")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/XX.jpg') { |f| a.photo = f }
-a.save!
-b = Content.create!(issue: a, content_type: "image", photo: "01.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/01.jpg') { |f| b.photo = f }
-b.save!
-b = Content.create!(issue: a, content_type: "image", photo: "02.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/02.jpg') { |f| b.photo = f }
-b.save!
-b = Content.create!(issue: a, content_type: "image", photo: "03.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/03.jpg') { |f| b.photo = f }
-b.save!
-b = Content.create!(issue: a, content_type: "image", photo: "04.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/04.jpg') { |f| b.photo = f }
-b.save!
-b = Content.create!(issue: a, content_type: "image", photo: "05.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/05.jpg') { |f| b.photo = f }
-b.save!
-b = Content.create!(issue: a, content_type: "image", photo: "06.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/06.jpg') { |f| b.photo = f }
-b.save!
-b = Content.create!(issue: a, content_type: "image", photo: "07.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/07.jpg') { |f| b.photo = f }
-b.save!
-b = Content.create!(issue: a, content_type: "image", photo: "08.jpg", description:"")
-File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/08.jpg') { |f| b.photo = f }
-b.save!
+# issue = Issue.create(title: "SAINT LAURENT MEN SS19 BACKSTAGE", magazine: "Archive", description: "", photo: "Archive_I_2.png", genre: "Fashion")
+# File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/XX.jpg') { |f| issue.photo = f }
+# issue.save!
+# b = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg", "08.jpg"]
+# b.each do |image|
+#   c = Content.create!(issue: issue, content_type: "image", photo: image, description:"")
+#   File.open(Dir.pwd + "/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/#{image}") { |f| c.photo = f }
+#   c.save!
+# end
+
+issue = Issue.create(title: "twentyninepalms", magazine: "SSAW", description: "", photo: "twentyninepalms/01.JPG", genre: "Fashion")
+File.open(Dir.pwd + '/app/assets/images/twentyninepalms/01.JPG') { |f| issue.photo = f }
+issue.save!
+b = ["01.JPG", "text", "02.JPG", "03.JPG", "text", "04.JPG", "05.JPG", "08.JPG"]
+b.each do |image|
+  unless image == "text"
+    c = Content.create!(issue: issue, content_type: "image", photo: image, description:"")
+    File.open(Dir.pwd + "/app/assets/images/twentyninepalms/#{image}") { |f| c.photo = f }
+    c.save!
+  else
+    c = Content.create!(issue: issue, content_type: "text", photo: "none", description: "Well, people act out. But as a kid, I was certainly drawn to stories—beyond the stories that we were living and knew, stories with different points of view. And I found those stories in film, especially. Different cultures and lives so foreign to mine. I think that was one of the draws that propelled me into film. I didn't know how to articulate stories. I'm certainly not a good orator, sitting here telling a story, but I could foster them in film.")
+    c.save!
+  end
+end
 
 # a = Issue.create(title: "Issue 3", magazine: "Archive", description: "", photo: "Archive_I_3.png", genre: "Fashion")
 # File.open(Dir.pwd + '/app/assets/images/Archive_I_3.png') { |f| a.photo = f }

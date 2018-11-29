@@ -1,2 +1,85 @@
-<h1>Issues#show</h1>
-<p>Find me in app/views/issues/show.html.erb</p>
+<div class="page-wrapper">
+  <div class="issue-feed-wrapper">
+    <%= link_to issues_path do %>
+    <p class="issue-feed-link"><i class="fas fa-arrow-left"></i>&nbsp&nbspBACK</p>
+    <% end %>
+
+    <h2 class="issue-feed-header"><%= @issue.title %></h2>
+    <p class="issue-feed-text">BY <%= @issue.magazine %></p>
+    <% @issue.contents.each do |content| %>
+    <div class="contentcard">
+      <% if content.content_type == "image" %>
+        <%= cl_image_tag content.photo, class: "content-image", onclick: "showCords(event)" %>
+        <% unless content.content_items.blank? %>
+          <% content.content_items.each do |content_item| %>
+          <div class="content-item scale-transition scale-out tooltipped" data-position="top" data-tooltip="$<%= content_item.price_cents/100 %> - <%= content_item.title %>" style="left: <%= content_item.item_x %>px; bottom: <%= content_item.item_y %>px">
+            <div class="tooltip-item">$<%= content_item.price_cents/100 %> - <%= content_item.title %></div>
+          </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p class="content-feed-text"><%= content.description %></p>
+      <% end %>
+
+    </div>
+
+    <% end %>
+  </div>
+
+</div>
+
+
+<%= content_for :after_js do %>
+<script>
+ // Transition in content-items as page loads
+ window.onload = function() {
+    var c_items = document.getElementsByClassName("content-item"),
+        len = c_items !== null ? c_items.length : 0,
+        i = 0;
+    for(i; i < len; i++) {
+        c_items[i].classList.remove('scale-out');
+    }
+}
+
+// show and hide content-items when clicking outside of these
+ $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 1});
+  });
+
+
+
+ document.addEventListener('click', function(event) {
+   var cItemElements = document.getElementsByClassName("content-item");
+   var isClickInside;
+   for (var i = 0; i < cItemElements.length; i++) {
+     isClickInside = cItemElements[i].contains(event.target);
+     console.log(isClickInside);
+     if (isClickInside) {
+      break;
+     }
+   }
+  if(isClickInside){
+    if(cItemElements)
+    console.log("clicked inside");
+  }else{
+   console.log("clicked outside");
+   len = cItemElements !== null ? cItemElements.length : 0,
+   i = 0;
+   if(cItemElements[0].classList.contains('scale-out')) {
+    for (i; i < cItemElements.length; i++) {
+      cItemElements[i].classList.remove('scale-out');
+    }
+   }else{
+    for (i; i < cItemElements.length; i++) {
+      cItemElements[i].classList.add('scale-out');
+    }
+   }
+  }
+ });
+
+ function showCords(event) {
+    console.log("item_x " + event.offsetX );
+    console.log("item_y " + (event.target.height - event.offsetY) );
+  }
+</script>
+<% end %>

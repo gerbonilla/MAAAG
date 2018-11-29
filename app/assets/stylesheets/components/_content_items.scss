@@ -1,0 +1,32 @@
+.content-item {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  // left: 70px;
+  // bottom: 570px;
+  position: relative;
+  box-shadow: 0px 0px 10px 5px rgba(204, 204, 204, 0.40);
+}
+
+.tooltip-item {
+  // background-color: $brand-color;
+  // position: relative;
+
+  padding: 10px 8px;
+  z-index: 2000;
+  border-radius: 2px;
+  color: #fff;
+  min-height: 36px;
+  line-height: 120%;
+  text-align: center;
+  // max-width: calc(100% - 4px);
+  overflow: hidden;
+  pointer-events: none;
+  background-color: #323232b8;
+  font-size: 0.7em;
+  position: relative;
+  bottom: 48px;
+  width: 200px;
+  right: 100px;
+}
