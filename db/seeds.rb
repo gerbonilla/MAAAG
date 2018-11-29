@@ -1,16 +1,16 @@
-# ContentItem.delete_all
-# Content.delete_all
-# Issue.delete_all
+ContentItem.delete_all
+Content.delete_all
+Issue.delete_all
 
-# issue = Issue.create(title: "SAINT LAURENT MEN SS19 BACKSTAGE", magazine: "Archive", description: "", photo: "Archive_I_2.png", genre: "Fashion")
-# File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/XX.jpg') { |f| issue.photo = f }
-# issue.save!
-# b = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg", "08.jpg"]
-# b.each do |image|
-#   c = Content.create!(issue: issue, content_type: "image", photo: image, description:"")
-#   File.open(Dir.pwd + "/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/#{image}") { |f| c.photo = f }
-#   c.save!
-# end
+issue = Issue.create(title: "SAINT LAURENT MEN SS19 BACKSTAGE", magazine: "Archive", description: "", photo: "Archive_I_2.png", genre: "Fashion")
+File.open(Dir.pwd + '/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/XX.jpg') { |f| issue.photo = f }
+issue.save!
+b = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg", "08.jpg"]
+b.each do |image|
+  c = Content.create!(issue: issue, content_type: "image", photo: image, description:"")
+  File.open(Dir.pwd + "/app/assets/images/SAINT LAURENT MEN SS19 BACKSTAGE/#{image}") { |f| c.photo = f }
+  c.save!
+end
 
 issue = Issue.create(title: "twentyninepalms", magazine: "SSAW", description: "", photo: "twentyninepalms/01.JPG", genre: "Fashion")
 File.open(Dir.pwd + '/app/assets/images/twentyninepalms/01.JPG') { |f| issue.photo = f }
