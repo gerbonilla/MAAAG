@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @issues = Issue.all
+    @issues = Issue.all.order("created_at DESC")
   end
 
   def show

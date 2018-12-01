@@ -21,12 +21,16 @@
   line-height: 120%;
   text-align: center;
   // max-width: calc(100% - 4px);
-  overflow: hidden;
-  pointer-events: none;
+  // overflow: hidden;
+  // pointer-events: none;
   background-color: #323232b8;
   font-size: 0.7em;
   position: relative;
   bottom: 48px;
   width: 200px;
   right: 100px;
+}
+
+a {
+  text-decoration: none !important;
 }

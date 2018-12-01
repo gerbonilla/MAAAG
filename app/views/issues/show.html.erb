@@ -12,8 +12,10 @@
         <%= cl_image_tag content.photo, class: "content-image", onclick: "showCords(event)" %>
         <% unless content.content_items.blank? %>
           <% content.content_items.each do |content_item| %>
-          <div class="content-item scale-transition scale-out tooltipped" data-position="top" data-tooltip="$<%= content_item.price_cents/100 %> - <%= content_item.title %>" style="left: <%= content_item.item_x %>px; bottom: <%= content_item.item_y %>px">
-            <div class="tooltip-item">$<%= content_item.price_cents/100 %> - <%= content_item.title %></div>
+          <div class="content-item scale-transition scale-out" style="left: <%= content_item.item_x %>px; bottom: <%= content_item.item_y %>px">
+            <%= link_to content_item.link, target: :_blank do %>
+              <div class="tooltip-item">$<%= content_item.price_cents/100 %> - <%= content_item.title %></div>
+            <% end %>
           </div>
           <% end %>
         <% end %>
@@ -50,10 +52,10 @@
 
  document.addEventListener('click', function(event) {
    var cItemElements = document.getElementsByClassName("content-item");
+   var cItemTooltips = document.getElementsByClassName("tooltip-item");
    var isClickInside;
    for (var i = 0; i < cItemElements.length; i++) {
-     isClickInside = cItemElements[i].contains(event.target);
-     console.log(isClickInside);
+     isClickInside = cItemElements[i].contains(event.target) || cItemTooltips[i].contains(event.target);
      if (isClickInside) {
       break;
      }
